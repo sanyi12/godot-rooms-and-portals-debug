@@ -1,0 +1,10 @@
+var view_debug_mode = 0
+
+func debug():
+	if Input.is_action_just_pressed("ui_accept"):
+		if view_debug_mode == 1:
+			get_viewport().debug_draw = Viewport.DEBUG_DRAW_DISABLED
+			view_debug_mode = 0
+		elif view_debug_mode == 0:
+			get_viewport().debug_draw = Viewport.DEBUG_DRAW_OVERDRAW
+			view_debug_mode = 1
